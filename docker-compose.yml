@@ -1,6 +1,6 @@
 services:
   cas-chat-socket:
-    image: docker-registry-staging.pgwontek.dev/cas-chat-socket:latest
+    image: docker-registry-staging.pgwontek.dev/cas-chat-socket:dev-latest
     container_name: cas-chat-socket
     network_mode: host
     env_file:
