@@ -1,0 +1,16 @@
+services:
+  cas-chat-socket:
+    image: docker-registry-staging.pgwontek.dev/cas-chat-socket:latest
+    container_name: cas-chat-socket
+    network_mode: host
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3030/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
